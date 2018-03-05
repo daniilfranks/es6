@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang ru RU>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Главная страница</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body class="body-index">
+    <div class="wrapper"></div>
+    <div class="menu"></div>
+    <div class="content">
+      <button onclick="loadPhones()">Загрузить номера</button>
+      <p id="phone"></p>
+      <form name="user" method="post" action="" onsubmit="createUser(); return false;">
+        <label for="title">title:</label>
+        <input id="name" type="text" name="title" placeholder="Title">
+        <label for="body">body:</label>
+        <input id="body" type="text" name="body" placeholder="body">
+        <label for="userId">userId:</label>
+        <input id="userId" type="text" name="userId" placeholder="userId">
+        <button type="submit">Create</button>
+      </form>
+      <form name="upload">
+        <input type="file" name="myfile">
+        <input type="submit" value="Загузить">
+      </form>
+      <div id="log">Прогресс загрузки</div>
+      <form name="publish">
+        <input type="text" name="message">
+        <input type="submit" value="Отправить">
+      </form>
+      <div id="subscribe"></div>
+    </div>
+    <div class="footer"></div>
+    <script src="js/ajax3.js"></script>
+    <script src="js/ajax2.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/promises2.js"></script>
+    <script src="js/promises.js"></script>
+    <script src="js/destructuring.js"></script>
+    <script src="js/class.js"></script>
+    <script src="js/class2.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/libs.min.js"></script>
+  </body>
+</html>

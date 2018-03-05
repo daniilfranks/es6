@@ -1,0 +1,7 @@
+{
+  "navPages": {
+    "Главная" : "/",
+    "Блог" : "blogs.html",
+    "Контакты" : "contacts.html"
+  }
+}

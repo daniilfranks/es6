@@ -1,0 +1,40 @@
+include ../mixins
+block variables
+
+doctype html
+html(lang "ru RU")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    title #{title}
+    meta(name="description" content="")
+    meta(name="keywords" content="")
+
+    link(rel="stylesheet" type="text/css" href="css/main.css")
+  body(class={'body-index':indexPage,
+              'body-blog':blogPage,
+              'body-contact':contactPage})
+    .wrapper
+      include ../modules/header
+
+    .menu
+      include ../modules/menu
+
+    .content
+      block content
+
+    .footer
+      include ../modules/footer
+    
+    script(src="js/ajax3.js")
+    script(src="js/ajax2.js")
+    script(src="js/ajax.js")
+    script(src="js/promises2.js")
+    script(src="js/promises.js")
+    script(src="js/destructuring.js")
+    script(src="js/class.js")
+    script(src="js/class2.js")
+    script(src="js/main.js")
+    script(src="js/libs.min.js")
+    block script

@@ -1,0 +1,34 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Главная страница'
+  - var indexPage = true
+
+block content
+  button(onclick="loadPhones()") Загрузить номера
+  p#phone
+
+  form(name="user" method="post" action="" onsubmit="createUser(); return false;")
+    label(for="title") title:
+    input#name(type="text" name="title" placeholder="Title")
+
+    label(for="body") body:
+    input#body(type="text" name="body" placeholder="body")
+
+    label(for="userId") userId:
+    input#userId(type="text" name="userId" placeholder="userId")
+
+    button(type="submit") Create
+
+  form(name="upload")
+    input(type="file" name="myfile")
+    input(type="submit" value="Загузить")
+
+  div#log Прогресс загрузки
+
+  
+  form(name="publish")
+    input(type="text" name="message")
+    input(type="submit" value="Отправить")
+
+  div#subscribe
