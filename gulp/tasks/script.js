@@ -1,7 +1,7 @@
 module.exports = function() {
   
   $.gulp.task('scripts:lib', function()  {
-    return $.gulp.src(['node_modules/babel-polyfill/dist/polyfill.min.js'])
+    return $.gulp.src(['node_modules/babel-polyfill/dist/polyfill.min.js','node_modules/js-cookie/src/js.cookie.js'])
       .pipe($.gp.concat('libs.min.js'))
       .pipe($.gulp.dest('build/js/'))
       .pipe($.bs.reload({

@@ -86,11 +86,21 @@ for (let lang of langs) {
   console.log(lang);
 }
 
+let persons = [
+{ name: 'Den', age: 27 },
+{ name: 'Jok', age: 32 },
+{ name: 'Leo', age: 41 }
+]
+
+for (let person of persons) {
+  console.log(`${person.name} ${person.age}`);
+}
+
+persons.forEach(myFunction);
+function myFunction(value, key) {
+  console.log(`${key} ${value.name} ${value.age}`);
+}
 */
-
-
-
-
 
 
 

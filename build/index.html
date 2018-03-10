@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-  </head>
-  <body class="body-index">
+    <script src="js/libs.min.js"></script>
+    <body class="body-index"></body>
     <div class="wrapper"></div>
     <div class="menu"></div>
     <div class="content">
@@ -28,13 +28,57 @@
         <input type="submit" value="Загузить">
       </form>
       <div id="log">Прогресс загрузки</div>
-      <form name="publish">
+      <form id="publish" name="publish">
         <input type="text" name="message">
-        <input type="submit" value="Отправить">
+        <input type="submit" action="/" value="Отправить" onclick="myForm(); return false;">
       </form>
       <div id="subscribe"></div>
+      <select name="users" onchange="showUser(this.value)">
+        <option value="">Выбрать пользователя</option>
+        <option value="user1">Данила</option>
+        <option value="user2">Валера</option>
+        <option value="user3">Иван</option>
+      </select>
+      <div id="users"></div>
+      <div id="mydom"></div>
+      <p>Tag name</p>
+      <p class="mycolor">My color 1</p>
+      <p class="mycolor">My color 2</p>
+      <p class="mycolor">My color 3</p>
+      <div id="dno">
+        <p class="mycolor">My title</p>
+        <p class="mycolor">My title</p>
+      </div>
+      <div class="box">
+        <div>
+          <input type="checkbox">Box 1
+        </div>
+        <div>
+          <input type="checkbox">Box 2
+        </div>
+        <div>
+          <input type="checkbox">Box 3
+        </div>
+        <button onclick="changeColor()">Change</button>
+      </div>
+      <div id="content">
+        <h2></h2>
+        <ul>
+          <li>Text 1</li>
+          <li>Text 2</li>
+          <li>Text 3</li>
+        </ul>
+      </div>
+      <button class="hello">Hello</button>
+      <div id="for"></div>
+      <button class="mydom" onclick="getAttributes()">Attributes</button>
+      <div class="block">Block</div>
+      <button class="set-block" onclick="setAttributes()">SetAttributes</button>
+      <button class="calc">Calc</button><a class="danila">Danila</a><img src="img/ruby.png" alt="ruby" width="64" height="64">
     </div>
     <div class="footer"></div>
+    <script src="js/base.js"></script>
+    <script src="js/dom.js"></script>
     <script src="js/ajax3.js"></script>
     <script src="js/ajax2.js"></script>
     <script src="js/ajax.js"></script>
@@ -44,6 +88,5 @@
     <script src="js/class.js"></script>
     <script src="js/class2.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/libs.min.js"></script>
-  </body>
+  </head>
 </html>

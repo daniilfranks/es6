@@ -12,7 +12,9 @@ html(lang "ru RU")
     meta(name="keywords" content="")
 
     link(rel="stylesheet" type="text/css" href="css/main.css")
-  body(class={'body-index':indexPage,
+    script(src="js/libs.min.js")
+    
+    body(class={'body-index':indexPage,
               'body-blog':blogPage,
               'body-contact':contactPage})
     .wrapper
@@ -27,6 +29,8 @@ html(lang "ru RU")
     .footer
       include ../modules/footer
     
+    script(src="js/base.js")
+    script(src="js/dom.js")
     script(src="js/ajax3.js")
     script(src="js/ajax2.js")
     script(src="js/ajax.js")
@@ -36,5 +40,4 @@ html(lang "ru RU")
     script(src="js/class.js")
     script(src="js/class2.js")
     script(src="js/main.js")
-    script(src="js/libs.min.js")
     block script

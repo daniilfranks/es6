@@ -27,8 +27,62 @@ block content
   div#log Прогресс загрузки
 
   
-  form(name="publish")
+  form(id="publish" name="publish")
     input(type="text" name="message")
-    input(type="submit" value="Отправить")
+    input(type="submit" action="/" value="Отправить" onclick="myForm(); return false;")
 
   div#subscribe
+
+  select(name="users" onchange="showUser(this.value)")
+    option(value="") Выбрать пользователя
+    option(value="user1") Данила
+    option(value="user2") Валера
+    option(value="user3") Иван
+
+  div#users
+
+  div#mydom
+  
+  p Tag name
+
+  p.mycolor My color 1
+  p.mycolor My color 2
+  p.mycolor My color 3
+
+  div#dno
+    p.mycolor My title
+    p.mycolor My title
+
+  div.box
+    div
+      input(type="checkbox")
+      | Box 1
+    div
+      input(type="checkbox")
+      | Box 2
+    div
+      input(type="checkbox")
+      | Box 3
+    button(onclick='changeColor()') Change
+
+  div#content
+    h2
+    ul
+      li Text 1
+      li Text 2
+      li Text 3
+
+  button.hello Hello
+
+  div#for
+
+  button.mydom(onclick="getAttributes()") Attributes
+
+  div.block Block
+  button.set-block(onclick="setAttributes()") SetAttributes
+
+  button.calc Calc
+
+  a.danila Danila
+
+  img(src="img/ruby.png" alt="ruby" width="64" height="64")
