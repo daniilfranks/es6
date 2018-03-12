@@ -59,8 +59,6 @@ li.className = 'mycolor';
 li.innerHTML = 'Text 4';
 app.appendChild(li);
 
-*/ 
-
 // Атрибуты
 function getAttributes() {
   let btn = document.querySelector('.mydom') // отобразить атрибуты кнопки
@@ -195,4 +193,258 @@ console.log(document.links.length);
 // title
 console.log(document.title);
 //console.log(document.title = 'New title');
+
+*/ 
+
+// Elements
+// Вызвать событие на кнопке
+document.getElementById("btn").addEventListener("click", () => console.log('Try it!'));
+
+let event = document.getElementById("event");
+event.addEventListener("mouseover", getMouseover);
+event.addEventListener("click", getClick);
+
+function getClick() {
+  this.style.backgroundColor = "red";
+  console.log('Click');
+};
+
+function getMouseover() {
+  console.log('Mouseover');
+};
+
+// добавить в список
+function AddList(item = "Default") {
+  let li = document.createElement("li");
+  var text = document.createTextNode(item);
+  li.appendChild(text);
+  document.getElementById("item-list").appendChild(li);
+};
+
+AddList('Car');
+AddList('Phone');
+document.getElementById("add-list").addEventListener("click", () => AddList());
+
+// перемещение между списками
+function AddTasksSuccessfully() {
+  let node = document.getElementById("tasks-successfully").lastChild;
+  document.getElementById("tasks-not-successfully").appendChild(node);
+};
+
+function AddTasksNoSuccessfully() {
+  let node = document.getElementById("tasks-not-successfully").lastChild;
+  document.getElementById("tasks-successfully").appendChild(node);
+};
+
+document.getElementById("btn-successfully").addEventListener("click", AddTasksSuccessfully);
+document.getElementById("btn-not-successfully").addEventListener("click", AddTasksNoSuccessfully);
+
+// количество элементов в списке
+console.log(document.getElementById("tasks-successfully").childElementCount);
+console.log(document.getElementById("tasks-not-successfully").childElementCount);
+
+// установить фокус
+document.getElementById("btn-not-successfully").focus();
+
+// удалить фокус
+document.getElementById("btn-not-successfully").blur();
+
+// Получить дочерние узлы
+console.log(document.body.childNodes);
+console.log(document.body.childNodes[5]);
+let task = document.getElementById("tasks-successfully").childNodes;
+task[1].style.backgroundColor = "yellow";
+
+console.log(document.body.children);
+console.log(document.body.children[5]);
+
+// добавить класс элементу
+//document.getElementById("tasks-not-successfully").classList.add('red');
+document.getElementById("tasks-not-successfully").classList.add('red', 'no-style');
+document.getElementById("tasks-not-successfully").className = "border";
+
+document.getElementById("class-list").className += " background";
+document.getElementById("class-list").className += " padding";
+
+// переключение между 2 классами
+function getToggle() {
+  let id = document.getElementById("tasks-not-successfully");
+  if (id.className == 'background') {
+    id.className = 'background2';
+  } else {
+    id.className = 'background'; 
+  }
+}
+
+// удалить стиль
+document.getElementById("tasks-not-successfully").classList.remove('no-style');
+
+// переключение между 2 классами
+function myToggle() {
+  document.getElementsByClassName('block')[1].classList.toggle("newblock");
+};
+
+console.log(document.getElementById("class-list").classList.value);
+console.log(document.getElementById("class-list").classList[0]);
+console.log(document.getElementById("class-list").classList.contains('red'));
+
+// удалить класс
+document.getElementById("class-list").classList.remove('border');
+
+// получить название класса
+console.log(document.getElementById("class-list").className);
+
+// Событие при скроле
+window.onscroll = () => scroll();
+
+function scroll() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.body.style.backgroundColor = "#ccc";
+  } else {
+    document.body.style.backgroundColor = "#fff";
+  }
+}
+
+// узнать размер окна элемента с рамкой padding
+let w_h = window.document.body;
+console.log(w_h.clientWidth);
+console.log(w_h.clientHeight);
+
+// с padding и border
+console.log(w_h.offsetWidth);
+console.log(w_h.offsetHeight);
+
+// клонировать элемент
+let id = document.getElementById("class-list");
+let clone = id.cloneNode(true);
+document.body.appendChild(clone);
+
+// Вывести первый результат из списка элементов
+console.log(document.getElementById("list").firstElementChild.innerHTML);
+console.log(document.getElementById("list").firstElementChild.tagName);
+
+// Вывести название атрибута
+console.log(document.getElementById("class-list").getAttribute("class"));
+console.log(document.getElementById("class-list").getAttribute("onclick"));
+
+console.log(document.getElementById("class-list").getAttributeNode("class").value);
+
+// проверить существует ли атрибут
+console.log(document.getElementById("class-list").hasAttribute("onclick"));
+
+// Проверить существуют ли дочерние узлы 
+console.log(document.getElementById("class-list").hasChildNodes());
+console.log(document.getElementById("none-list").hasChildNodes());
+
+// вывести контент на странице
+document.querySelector(".html").innerHTML = 'HTML';
+
+let html = document.querySelector(".html").innerHTML;
+document.querySelector(".css").innerHTML = html;
+
+
+// добавить в начало списка
+let nli = document.createElement("li");
+let ntext = document.createTextNode("Water");
+nli.appendChild(ntext);
+
+let nul = document.querySelector("#list");
+nul.insertBefore(nli, nul.childNodes[0])
+
+// вывести последний элемент списка
+console.log(document.getElementById("list").lastElementChild);
+console.log(document.getElementById("list").lastElementChild.innerHTML);
+console.log(document.getElementById("list").lastElementChild.tagName);
+
+// при добавление текста объеденит весь текст в 1 элемент
+function AddText(text) {
+  let texts = document.createTextNode(text);
+  let id = document.getElementById("normalize");
+  id.appendChild(texts);
+  id.normalize();
+};
+
+AddText(' first text');
+AddText(' first text');
+
+// Вывести родитель узла div
+console.log(document.getElementById('list').parentNode.nodeName);
+console.log(document.getElementById('list').parentElement.nodeName);
+
+
+// Удалить аттрибут
+document.getElementById('attribute').removeAttribute("class");
+document.getElementById('attribute').removeAttribute("onclick");
+
+// Удалить элемент
+document.getElementById('list').removeChild(list.childNodes[0]);
+
+// Узнать есть ли дочерние узлы, удалить
+function deleteElement() {
+  let list = document.getElementById('list');
+  if (list.hasChildNodes()) {
+    list.removeChild(list.childNodes[0]);
+  };
+};
+
+//deleteElement();
+
+// удалить все узлы
+function deleteAllElement() {
+  let list = document.getElementById("list");
+  while (list.hasChildNodes()) {
+      list.removeChild(list.firstChild);
+  }
+}
+
+//deleteAllElement();
+
+// удалить элемент по id
+function deleteElementId() {
+  let item = document.getElementById("tea_1");
+  item.parentNode.removeChild(item);
+}
+
+//deleteElementId();
+
+// ширина высота контента с прокруткой
+console.log(document.body.scrollHeight);
+console.log(document.body.scrollWidth);
+
+// скролл
+function getScroll() {
+  document.getElementById("scroll").scrollIntoView();
+}
+
+// Event
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

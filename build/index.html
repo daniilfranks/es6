@@ -14,6 +14,7 @@
     <div class="content">
       <button onclick="loadPhones()">Загрузить номера</button>
       <p id="phone"></p>
+      <button onclick="getScroll();">Scroll</button>
       <form name="user" method="post" action="" onsubmit="createUser(); return false;">
         <label for="title">title:</label>
         <input id="name" type="text" name="title" placeholder="Title">
@@ -75,6 +76,40 @@
       <div class="block">Block</div>
       <button class="set-block" onclick="setAttributes()">SetAttributes</button>
       <button class="calc">Calc</button><a class="danila">Danila</a><img src="img/ruby.png" alt="ruby" width="64" height="64">
+      <button id="btn">Try it</button>
+      <button id="event">Event</button><br>
+      <ul id="item-list"></ul>
+      <button id="add-list">Add list</button>
+      <h2>Задачи выполненые</h2>
+      <ul id="tasks-successfully">
+        <li class="task-1">Купить бетон</li>
+        <li class="task-2">Построить дом</li>
+      </ul>
+      <button id="btn-successfully">Перенести задачу в не выполненые</button>
+      <h2>Задачи не выполненые</h2>
+      <ul id="tasks-not-successfully">
+        <li class="task-3">Залить фундамент</li>
+      </ul>
+      <button id="btn-not-successfully">Перенести задачу в выполненые</button>
+      <div class="block"></div>
+      <button id="toggle" onclick="myToggle()">Toggle</button>
+      <p class="red border" id="class-list">Class list</p>
+      <ul id="list">
+        <li>coffee</li>
+        <li id="tea_1">tea</li>
+      </ul>
+      <ul id="none-list"></ul>
+      <p class="myclass">Myclass</p>
+      <div class="html"></div>
+      <div class="css"></div>
+      <p id="normalize">Normalize:</p>
+      <p class="red" id="attribute">Attribute</p>
+      <ul id="rep">
+        <li>Car</li>
+        <li>Phone</li>
+        <li>PC</li>
+      </ul>
+      <div id="scroll"></div>
     </div>
     <div class="footer"></div>
     <script src="js/base.js"></script>

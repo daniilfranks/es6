@@ -8,6 +8,8 @@ block content
   button(onclick="loadPhones()") Загрузить номера
   p#phone
 
+  button(onclick="getScroll();") Scroll
+
   form(name="user" method="post" action="" onsubmit="createUser(); return false;")
     label(for="title") title:
     input#name(type="text" name="title" placeholder="Title")
@@ -86,3 +88,60 @@ block content
   a.danila Danila
 
   img(src="img/ruby.png" alt="ruby" width="64" height="64")
+
+  button#btn Try it
+  button#event Event
+
+  br
+
+  ul#item-list
+
+  button#add-list Add list
+
+  h2 Задачи выполненые
+  ul#tasks-successfully
+    li.task-1 Купить бетон
+    li.task-2 Построить дом
+
+  button#btn-successfully Перенести задачу в не выполненые
+
+
+  h2 Задачи не выполненые
+  ul#tasks-not-successfully
+    li.task-3 Залить фундамент
+    
+  button#btn-not-successfully Перенести задачу в выполненые
+
+  
+  div.block
+  button#toggle(onclick="myToggle()") Toggle
+
+  p#class-list.red.border Class list
+
+  ul#list
+    li coffee
+    li#tea_1 tea
+  ul#none-list
+
+  p.myclass Myclass
+
+  div.html
+  div.css
+
+  p#normalize Normalize:
+
+  p#attribute.red Attribute
+
+  ul#rep
+    li Car
+    li Phone
+    li PC
+
+  div#scroll
+
+  
+
+  
+
+
+
