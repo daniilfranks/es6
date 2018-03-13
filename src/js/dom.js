@@ -198,6 +198,7 @@ console.log(document.title);
 
 // Elements
 // Вызвать событие на кнопке
+/*
 document.getElementById("btn").addEventListener("click", () => console.log('Try it!'));
 
 let event = document.getElementById("event");
@@ -416,7 +417,225 @@ function getScroll() {
   document.getElementById("scroll").scrollIntoView();
 }
 
-// Event
+// События мыши
+// Клик левой кнопкой
+function getClick() {
+  document.getElementById('click_event').innerHTML = 'Click!';
+};
+
+function getPClick() {
+  document.getElementById('click_event').innerHTML = 'P TAG Click!';
+};
+
+document.getElementById('p_click').onclick = () => { getPClick() };
+
+function getEventClick() {
+  document.getElementById('click_event').innerHTML = 'Event Click Listener!';
+};
+
+document.getElementById("event_click").addEventListener("click", getEventClick);
+
+// Клик правой кнопкой
+
+function getRightClick() {
+  document.getElementById('click_event').innerHTML = 'RightClick';
+}
+
+document.querySelector('.block').addEventListener("contextmenu", getRightClick);
+
+// дабл клик
+function getDoubleClick() {
+  document.getElementById('click_event').innerHTML = 'Double Click';
+}
+
+document.querySelector('#double_click').addEventListener("dblclick", getDoubleClick);
+
+// событие при наведение мыши
+function mouseEnter() {
+  document.getElementById('click_event').innerHTML = 'mouseEnter';
+}
+
+function mouseLeave() {
+  document.getElementById('click_event').innerHTML = '';
+}
+
+document.querySelector('#mouseenter').addEventListener("mouseenter", mouseEnter);
+document.querySelector('#mouseenter').addEventListener("mouseleave", mouseLeave);
+
+// кординаты
+function mouseMouseMove(e) {
+  document.getElementById('mousemove').innerHTML = `${e.clientX} x ${e.clientY}`;
+}
+
+document.querySelector('#mousemove').addEventListener("mousemove", (e)=> { mouseMouseMove(e) });
+
+// События клавиатуры
+function keyDown() {
+  let text = document.querySelector('#key_down');
+  text.style.backgroundColor = "red";
+
+  document.querySelector('.key_down_content').innerHTML = text.value.toUpperCase();
+}
+
+document.querySelector('#key_down').addEventListener("keyup", keyDown); //keydown, keypress
+
+// События объектов и фреймов
+
+// запретить закрыть страницу без подтверждения
+
+//window.addEventListener("beforeunload", (e)=> { e.returnValue = "Write something clever here.." });
+window.onbeforeunload = (e)=> { e.returnValue = "Write something clever here.." };
+
+// Событие возникает когда объект загружен
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Iframe is loaded.";
+}
+
+document.getElementById("myFrame").addEventListener("load", myFunction);
+
+// Событие происходит, когда пользователь переходит на веб-страницу
+function Welcome() {
+  console.log('Welcome!');
+}
+
+window.addEventListener("pageshow", Welcome);
+
+// Событие при скроле
+function Scroll() {
+  document.getElementById("demo").innerHTML = "You scrolled in div.";
+}
+
+document.getElementById("scrol-content").addEventListener("scroll", Scroll);
+
+// Формы
+function InputBlur() {
+  let x = document.getElementById("fname");
+  x.style.background = "red";
+  x.value = x.value.toUpperCase();
+}
+
+function InputFocus() {
+  document.getElementById("fname").style.background = "yellow";
+}
+
+// Когда вы покидаете поле ввода, запускается функция
+document.getElementById("fname").addEventListener("blur", InputBlur);
+// Событие при наведени на форму
+document.getElementById("fname").addEventListener("focus", InputFocus);
+
+// Событие возникает, когда содержимое элемента формы, выбора или выбранного 
+//состояния изменилось (для <input>, <select> и <textarea>)
+function ChangeCar() {
+  let x = document.getElementById("change_car").value;
+  document.querySelector('.result').innerHTML = x;
+}
+
+document.getElementById("change_car").addEventListener("change", ChangeCar);
+
+// Событие возникает, когда элемент получает пользовательский ввод
+function TextInput() {
+  let text = document.getElementById("text_input").value;
+  document.querySelector('.result').innerHTML = text;
+}
+
+document.getElementById("text_input").addEventListener("input", TextInput);
+
+// range
+function RangePrice() {
+  let text = document.getElementById("range_price").value;
+  document.querySelector('#result_price').innerHTML = text;
+}
+
+document.getElementById("range_price").addEventListener("input", RangePrice);
+
+// Валидация
+function NoValid() {
+  console.log('Input no valid!');
+}
+
+document.getElementById("no-valid").addEventListener("invalid", NoValid);
+
+// очистка формы
+function FormReset() {
+  console.log('Form Reset!');
+}
+
+document.getElementById("resetForm").addEventListener("reset", FormReset);
+
+// выделеть текст для копирования
+function SelectText() {
+  document.getElementById("no-valid").select();
+  console.log('Select Text!');
+}
+
+document.getElementById("no-valid").addEventListener("select", SelectText);
+
+// Событие происходит при отправке формы
+function FormSubmit(event) {
+  event.preventDefault();
+  console.log('Форма отправлена!');
+}
+
+document.getElementById("resetForm").addEventListener("submit", (event)=> { FormSubmit(event) });
+
+// Перетаскивания элемента
+// https://www.w3schools.com/jsref/dom_obj_event.asp
+function getDrop(event) {
+  event.preventDefault();
+  if ( event.target.className == "droptarget" ) {
+    let data = event.dataTransfer.getData("Text");
+    event.target.appendChild(document.getElementById(data));
+  }
+};
+
+// Событие возникает, когда пользователь начинает перетаскивать элемент
+document.ondragstart = (event) => {
+  event.dataTransfer.setData("Text", event.target.id);
+  document.getElementById("drop-text").innerHTML = "Started to drag the p element.";
+};
+// Событие возникает, когда элемент перетаскивается
+document.ondrag = (event) => { 
+  document.getElementById("drop-text").innerHTML = "The p element is being dragged"; 
+};
+// Элемент перетаскивания находится над целевой точкой перетаскивания
+document.ondragover = (event) => event.preventDefault();
+// Событие происходит, когда пользователь закончил перетаскивание элемента
+document.ondragend = (event) => {
+  document.getElementById("drop-text").innerHTML = "Finished dragging the p element";
+};
+// Событие происходит, когда элемент перетаскивания удаляется по целевой точке
+document.ondrop = (event) => { getDrop(event) };
+
+// События в буфере обмена
+function CopyText(event) {
+  console.log(event);
+  console.log('Copy text!');
+}
+
+document.querySelector('.copy-text').oncopy = (event) => CopyText(event);
+
+function CutText() {
+  console.log('Cut text!');
+}
+
+document.querySelector('.copy-text').oncut = () => CutText();
+
+function PastText() {
+  console.log('Past text!');
+}
+
+document.querySelector('.past-text').onpaste = () => PastText();
+
+*/
+
+
+
+
+
+
+
+
+
 
 
 

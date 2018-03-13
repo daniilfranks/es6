@@ -35,5 +35,51 @@
   background: blue;
 }
 
+#scrol-content {
+  border: 1px solid black;
+  width: 200px;
+  height: 100px;
+  overflow: scroll;
+}
+
+.droptarget {
+  float: left; 
+  width: 100px; 
+  height: 50px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+.animation{
+  margin: 25px;
+  width: 200px;
+  height: 50px;
+  background: orange;
+  position: relative;
+  font-size: 20px;
+}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+}
+
+.anchor {
+  height: 2000px;
+  display: table;
+}
+
+.anchor-home {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+
+
+
+
+
+
 
 

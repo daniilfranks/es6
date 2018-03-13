@@ -1,0 +1,24 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Media page'
+  - var indexPage = true
+
+block content
+  audio(id="horse-audio" controls)
+    source(src="horse.ogg" type="audio/ogg")
+    source(src="horse.mp3" type="audio/mpeg")
+
+  div.animation Animation div.
+
+  | Text:
+  input.unicode(type="text")
+  div#demo
+  
+
+  div.anchor
+    a(name="home")
+    a.anchor-home(href="#home") Home
+
+
+  button.reload Reload

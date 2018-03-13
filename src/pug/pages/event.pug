@@ -1,0 +1,94 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Event page'
+  - var indexPage = true
+
+block content
+  button(onclick='getClick();') Event click
+  p#p_click p click
+  button#event_click Event click Listener
+  button#double_click double 
+  button#mouseenter mouseenter
+
+  div#click_event
+
+  div#mousemove.block
+
+  br
+  
+  div.block
+
+  input#key_down
+  div.key_down_content
+
+  a(href="https://danilababanov.ovh") Danila Babanov
+
+  iframe(id="myFrame", src="https://danilababanov.ovh")
+  p#demo
+
+  div#scrol-content
+    p In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+
+    p Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had the advantages that you've had.
+
+  | Enter you name: 
+  input#fname(type="text")
+
+  br
+
+  select#change_car
+    option(value="") Выбрать авто
+    option(value="audi") Audi
+    option(value="bmw") Bmw
+    option(value="volvo") Volvo
+  p.result
+
+  | Description:
+  textarea#text_input
+
+  br
+
+  p#result_price
+  input#range_price(type="range" min="0" max="100")
+
+  br
+  
+  form#resetForm
+    | Enter you name: 
+    input#no-valid(type="text" required pattern=".{6,}")
+    input(type="reset")
+    input(type="submit" value="Valid user")
+
+
+  div.droptarget
+    p#dragtarget(draggable="true") Drag me!
+  div.droptarget
+
+  div#drop-text(style="clear:both;")
+
+  p.copy-text Copy text
+  input.past-text(type="text")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
