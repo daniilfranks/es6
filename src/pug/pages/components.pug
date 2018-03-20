@@ -1,0 +1,25 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Components page'
+  - var indexPage = true
+
+block content
+
+  div#sweets-menu.menu
+    span.menu__title Menu
+    ul
+      li Home
+      li Blog
+      li Contact
+
+  div#clock
+    span.date
+
+  button(onclick="clock.start()") Start
+  button(onclick="clock.stop()") Stop
+
+  div#voter
+    span.down - 
+    span.vote 0 
+    span.up  +

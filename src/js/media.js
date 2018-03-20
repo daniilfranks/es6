@@ -94,7 +94,7 @@ function ReloadPage() {
 }
 document.querySelector('.reload').onclick = () => ReloadPage();
 
-*/
+
 
 // Свойства объекта Navigator
 console.log(navigator.appCodeName); // Браузер
@@ -122,4 +122,8 @@ console.log(screen.availWidth);
 console.log(screen.availHeight);
 console.log(screen.colorDepth); // глубина цвета экрана
 console.log(screen.pixelDepth);
+
+*/
+
+// Window Object
 

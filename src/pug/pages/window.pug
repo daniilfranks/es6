@@ -1,0 +1,68 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Window page'
+  - var indexPage = true
+
+block content
+  button(onclick="openWindow()") Open window
+  button(onclick="closeWindow()") Close window
+
+  div#dom
+
+  div#color-text
+    p.red Red
+    p.blue Blue
+    p.yellow Yellow
+    p.pink Pink
+
+  div#buttons
+    button(data-action="start") Start
+    button(data-action="pause") Pause
+    button(data-action="stop") Stop
+
+  div#posts
+    div
+      h2 Title 1
+      p Description
+      button(data-counter) 0
+      button.remove x
+    div
+      h2 Title 2
+      p Description
+      button(data-counter) 0
+      button.remove x
+    div
+      h2 Title 3
+      p Description
+      button(data-counter) 0
+      button.remove x
+
+  table#users
+    thead
+      tr
+        th(data-type="name") Name
+        th(data-type="year") Year
+    tbody
+      tr
+        td Den
+        td 27
+      tr
+        td Leo
+        td 31
+      tr
+        td Alex
+        td 40
+      tr
+        td Howard
+        td 23
+      tr
+        td Mikle
+        td 19
+
+  button(data-toggle-id="message") Оставить сообщение
+  form#message(hidden)
+    | Message
+    input(type="text")
+
+

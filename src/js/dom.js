@@ -626,12 +626,182 @@ function PastText() {
 
 document.querySelector('.past-text').onpaste = () => PastText();
 
+// Обработка события для всех элементов event.target
+let div = document.getElementById('color-text');
+let selectedP;
+
+div.addEventListener("click", (event) => Click(event));
+
+function Click(event) {
+  let target = event.target;
+
+  while (target != this) {
+    if (target.tagName == 'P') {
+      highlight(target);
+      return;
+    }
+    target = target.parentNode;
+  }
+}
+
+function highlight(node) {
+  if (selectedP) {
+    selectedP.classList.remove('highlight');
+  }
+  selectedP = node;
+  selectedP.classList.add('highlight');
+}
+
+
+function MyButton(elem) {
+  this.start = () => { console.log('Start!'); };
+  this.pause = () => { console.log('Pause!'); };
+  this.stop = () => { console.log('Stop!'); };
+
+  let self = this;
+
+  elem.addEventListener('click', (event) => ActionClick(event));
+
+  function ActionClick(event) {
+    let target = event.target;
+    let action = target.getAttribute('data-action');
+    if (action) {
+      self[action]();
+    }
+  }
+}
+
+new MyButton(buttons);
+
+let post = document.getElementById('posts');
+
+post.addEventListener('click', (event) => Delete(event));
+
+function Delete(event) {
+  if (!event.target.classList.contains('remove')){
+    return;
+  } else {
+    event.target.parentNode.hidden = !event.target.parentNode.hidden;
+  }
+}
+
+
+// сортировка
+var table = document.getElementById('users');
+
+table.addEventListener('click', (event) => Sort(event));
+
+function Sort(event) {
+  if (event.target.tagName != 'TH') {
+    return;
+  } else {
+    // Если TH -- сортируем
+    sortGrid(event.target.cellIndex, event.target.getAttribute('data-type'));
+  }
+}
+
+function sortGrid(colNum, type) {
+  let tbody = users.getElementsByTagName('tbody')[0];
+
+  // Составить массив из TR
+  let rowsArray = [].slice.call(tbody.rows);
+
+  // определить функцию сравнения, в зависимости от типа
+  let compare;
+
+  switch (type) {
+    case 'year':
+      compare = function(rowA, rowB) {
+        return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML;
+      };
+      break;
+    case 'name':
+      compare = function(rowA, rowB) {
+        return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML;
+      };
+      break;
+  }
+
+  // сортировать
+  rowsArray.sort(compare);
+
+  // Убрать tbody из большого DOM документа для лучшей производительности
+  users.removeChild(tbody);
+
+  // добавить результат в нужном порядке в TBODY
+  // они автоматически будут убраны со старых мест и вставлены в правильном порядке
+  for (var i = 0; i < rowsArray.length; i++) {
+    tbody.appendChild(rowsArray[i]);
+  }
+
+  users.appendChild(tbody);
+}
+
+// Счетчик
+let post = document.getElementById('posts');
+
+post.addEventListener('click', (event) => Counter(event));
+
+function Counter(event) {
+  if (!event.target.hasAttribute('data-counter')) return;
+
+  let counter = event.target;
+  counter.innerHTML++;
+}
+
+// Скрыть/показать элемент
+
+document.addEventListener('click', (event) => Message(event));
+
+function Message(event) {
+  let target = event.target;
+
+  let id = target.getAttribute('data-toggle-id');
+  if (!id) return;
+
+  let elem = document.getElementById(id);
+
+  elem.hidden = !elem.hidden;
+}
+
+// галерея
+<p><img id="largeImg" src="https://js.cx/gallery/img1-lg.jpg" alt="Large image"></p>
+<ul id="thumbs">
+  <li>
+    <a href="https://js.cx/gallery/img2-lg.jpg" title="Image 2"><img src="https://js.cx/gallery/img2-thumb.jpg"></a>
+  </li>
+</ul>
+
+let largeImg = document.getElementById('largeImg');
+let thumbs = document.getElementById('thumbs');
+
+thumbs.onclick = function(e) {
+  let target = e.target;
+
+  while (target != this) {
+
+    if (target.nodeName == 'A') {
+      showThumbnail(target.href, target.title);
+      return false;
+    }
+
+    target = target.parentNode;
+  }
+
+}
+
+function showThumbnail(href, title) {
+  largeImg.src = href;
+  largeImg.alt = title;
+}
+
+// Защита от копирования
+document.onselectstart = noselect;
+document.ondragstart = noselect;
+document.oncontextmenu = noselect;
+function noselect() {return false;} 
+
 */
-
-
-
-
-
 
 
 

@@ -34,7 +34,5 @@ applyForVisa({})
   .then(bookHotel)
   .then(buyTickets)
   .catch(error => console.error(error));
-
-
 */
 "use strict";

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang ru RU>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Window page</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/libs.min.js"></script>
+    <body class="body-index"></body>
+    <div class="wrapper"></div>
+    <div class="menu"></div>
+    <div class="content">
+      <button onclick="openWindow()">Open window</button>
+      <button onclick="closeWindow()">Close window</button>
+      <div id="dom"></div>
+      <div id="color-text">
+        <p class="red">Red</p>
+        <p class="blue">Blue</p>
+        <p class="yellow">Yellow</p>
+        <p class="pink">Pink</p>
+      </div>
+      <div id="buttons">
+        <button data-action="start">Start</button>
+        <button data-action="pause">Pause</button>
+        <button data-action="stop">Stop</button>
+      </div>
+      <div id="posts">
+        <div>
+          <h2>Title 1</h2>
+          <p>Description</p>
+          <button data-counter>0</button>
+          <button class="remove">x</button>
+        </div>
+        <div>
+          <h2>Title 2</h2>
+          <p>Description</p>
+          <button data-counter>0</button>
+          <button class="remove">x</button>
+        </div>
+        <div>
+          <h2>Title 3</h2>
+          <p>Description</p>
+          <button data-counter>0</button>
+          <button class="remove">x</button>
+        </div>
+      </div>
+      <table id="users">
+        <thead>
+          <tr>
+            <th data-type="name">Name</th>
+            <th data-type="year">Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Den</td>
+            <td>27</td>
+          </tr>
+          <tr>
+            <td>Leo</td>
+            <td>31</td>
+          </tr>
+          <tr>
+            <td>Alex</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>Howard</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>Mikle</td>
+            <td>19</td>
+          </tr>
+        </tbody>
+      </table>
+      <button data-toggle-id="message">Оставить сообщение</button>
+      <form id="message" hidden>Message
+        <input type="text">
+      </form>
+    </div>
+    <div class="footer"></div>
+    <script src="js/fetch.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/generate.js"></script>
+    <script src="js/window.js"></script>
+    <script src="js/media.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/ajax3.js"></script>
+    <script src="js/ajax2.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/promises2.js"></script>
+    <script src="js/promises.js"></script>
+    <script src="js/destructuring.js"></script>
+    <script src="js/class.js"></script>
+    <script src="js/class2.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+</html>

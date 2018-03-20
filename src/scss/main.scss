@@ -75,10 +75,49 @@
   vertical-align: bottom;
 }
 
+p.red {
+  color: red;
+}
 
+p.blue {
+  color: blue;
+}
 
+p.yellow {
+  color: yellow;
+}
 
+p.pink {
+  color: pink;
+}
 
+p.highlight {
+  color: black;
+}
+
+.menu ul {
+  display: none;
+  margin: 0;
+}
+
+.menu .menu__title {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu .menu__title:before {
+  content: '▶';
+  padding-right: 6px;
+  color: green;
+}
+
+.menu.open ul {
+  display: block;
+}
+
+.menu.open .menu__title:before {
+  content: '▼';
+}
 
 
 

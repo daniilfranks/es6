@@ -1,0 +1,13 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Fetch page'
+  - var indexPage = true
+
+block content
+
+  form#post(method="post")
+    input(type="text" placeholder="Title" name='title')
+    input(type="text" placeholder="Body" name='body')
+    input(type="number" placeholder="userId" name='userId')
+    button(type="submit") Create user

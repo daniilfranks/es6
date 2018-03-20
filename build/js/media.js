@@ -1,5 +1,3 @@
-"use strict";
-
 /*
 // Событие конца проигрования
 function EndAudio() {
@@ -96,7 +94,7 @@ function ReloadPage() {
 }
 document.querySelector('.reload').onclick = () => ReloadPage();
 
-*/
+
 
 // Свойства объекта Navigator
 console.log(navigator.appCodeName); // Браузер
@@ -105,13 +103,13 @@ console.log(navigator.appVersion); // Версия Браузера
 console.log(navigator.cookieEnabled); // Куки включены ?
 console.log(navigator.language); // Язык
 console.log(navigator.platform); // Платформа
-console.log(navigator.userAgent); // Юзер агент
-console.log(navigator.javaEnabled()); // JAVA ON ?
+console.log(navigator.userAgent);  // Юзер агент
+console.log(navigator.javaEnabled());  // JAVA ON ?
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      console.log(position.coords.latitude + " x " + position.coords.longitude);
+    navigator.geolocation.getCurrentPosition( (position) => { 
+      console.log(`${position.coords.latitude} x ${position.coords.longitude}`);
     });
   }
 }
@@ -124,3 +122,8 @@ console.log(screen.availWidth);
 console.log(screen.availHeight);
 console.log(screen.colorDepth); // глубина цвета экрана
 console.log(screen.pixelDepth);
+
+*/
+
+// Window Object
+"use strict";
